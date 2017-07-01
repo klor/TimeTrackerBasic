@@ -82,13 +82,10 @@ The following values can be configured (default values in parenthesis): folder n
 ## Hooks
 
 TimeTrackerBasic support hooks that allow you to manipulate each timesheet line.
-
 Hooks trigger when the first word in your timesheet entry matches a function name. 
-
 For instance, "t Hello Kristoffer" will call hello() with "Kristoffer" as argument -- see `index.php` for details.
 
 Another use of hooks is to create a hook that looks for tags (`@MyProject`) in your registrations - and uses these to look up project and activity IDs (for `@MyProject`) in an array or database.
-
 This may come handy because project and activity IDs are often required when entering time in corporate time registration systems.
 
 For security reasons, function calls made by hooks are only supported in the command-prompt - while not supported in the browser (allowing function calls from the url can lead to all kinds of security nightmares).
