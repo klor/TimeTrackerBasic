@@ -1,8 +1,8 @@
 # TimeTrackerBasic
-TimeTrackerBasic helps you keep track of time. Track time from your Windows computer when working on a customer project or ticket, in real time. Data is stored in a plain text file, in CSV format for easy access.
 
-
+TimeTrackerBasic helps you keep track of time from a DOS command-prompt or in your browser address bar on your Windows computer.
 TimeTrackerBasic removes the need to manually keep track of what you are doing - and when the job started.
+Data is stored in a plain text file, in CSV format for easy access.
 
 After having logged entries for the week, you can either leave the timesheet as is, or you can manually transfer the values to a corporate time registration system. Answering questions like "Did I work for 1 or 2 hours on the EnormiCorp project?" and "What did I do last Monday" will now be easy to answer for those who do most of their work behind a workstation in a Windows environment.
 
@@ -25,13 +25,11 @@ To retrieve data, you can use [fgetcsv()](http://php.net/manual/en/function.fget
 
 ### Usage in CMD
 
-Open a Windows command-prompt, and enter:
+1. Open a Windows command-prompt, and enter:
 	`CD \phpfiles\TimeTrackerBasic`
-
-You can now log your time usage by typing "t" in the command-prompt, followed by your timesheet entry - as in this example:
-	`CMD:> t My first task #EnormiCorp` (where t is shorthand for `t.bat`)
-
-Output:
+2. You can now log your time usage by typing "t" in the command-prompt, followed by your timesheet entry - as in this example:
+	`C:\phpfiles\TimeTrackerBasic>t My first task #EnormiCorp` (where t is shorthand for `t.bat`)
+3. Output:
 	20201224-2359,"My first task #EnormiCorp"
 
 How special characters are handled for entries in the command-prompt:
