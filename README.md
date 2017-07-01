@@ -68,9 +68,8 @@ The steps to do this in Firefox are:
     Location: `http://localhost/TimeTrackerBasic/?%s`
     Keyword: t
 
-Now you can simply type "t" followed by a timesheet entry - as in this example:
-
-`t My first task @EnormiCorp` (wheret
+Now you can simply type "t" followed by a timesheet entry - as here:
+`t My first task @EnormiCorp`
 
 
 ## Installation
