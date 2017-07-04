@@ -1,5 +1,7 @@
 <?php
 
+namespace tsb;
+
 // CONFIG
 
 $config = parse_ini_file('config.ini');
@@ -25,14 +27,17 @@ if( php_sapi_name()=='cli' ) {
 	array_shift($argv);
 	$q = implode($argv,' ');
 
-	if(count($argv)>1 && function_exists($argv[0])) {
-		// Append any call to a user-defined function (if function exists)
-		$args = array_slice($argv,1);
-		$out[] = call_user_func_array($argv[0], $args);
-	} else if($q) {
-		// Append the original string (if string was entered)
-		$out[] = trim($q);
+	if(count($argv)>1 ) {
+		// Only allow calls to user-defined functions
+		if( function_exists( 'tsb\\'.$argv[0] ) && in_array('tsb\\'.$argv[0], get_defined_functions()['user']) ) {
+			// Append any call to a user-defined function (if function exists)
+			$args = array_slice($argv,1);
+			$q = call_user_func_array('tsb\\'.$argv[0], $args);
+		}
 	}
+
+	// Append the original string (if string was entered)
+	$out[] = trim($q);
 
 } else if(isset($_SERVER['QUERY_STRING'])) {
 	// Web request
